@@ -20,5 +20,7 @@ namespace Blog__ASP.NET_MVC_Practical_Project.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Blog__ASP.NET_MVC_Practical_Project.Models.Post> Posts { get; set; }
     }
 }

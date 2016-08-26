@@ -2,18 +2,26 @@
     ViewBag.Title = "Home Page";
 }
 
+@model IEnumerable<Blog__ASP.NET_MVC_Practical_Project.Models.Post>
 <div class="jumbotron">
     <h1>League of Legends Guides Blog</h1>
  </div>
 
 <section class="row">
-    <article class="post col-md-4">
-        <h2>Blog Post</h2>
-        <div>Created on <i>01/01/2016</i> by <i> Hristo</i></div>
-        <p>
-            Post text
-        </p>
-    </article>
-
-    
+    @foreach (var post in Model)
+    {
+        <article class="post col-md-4">
+            <h2>@post.Title</h2>
+            <div>
+                Created on <i>@post.Date</i>
+                @if (@post.Author != null)
+                {
+                @:by  <i>@post.Author.FullName (@post.Author.UserName)</i>
+                }
+            </div>
+            <p>
+                @post.Body
+            </p>
+        </article>
+    }
 </section>
