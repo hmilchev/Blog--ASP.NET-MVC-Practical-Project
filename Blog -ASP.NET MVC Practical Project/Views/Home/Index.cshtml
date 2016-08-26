@@ -11,7 +11,7 @@
     @foreach (var post in Model)
     {
         <article class="post col-md-4">
-            <h2>@post.Title</h2>
+            <h2>@Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional.Utils.CutText(post.Title, 50)</h2>
             <div>
                 Created on <i>@post.Date</i>
                 @if (@post.Author != null)
@@ -20,7 +20,7 @@
                 }
             </div>
             <p>
-                @post.Body
+                @Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional.Utils.CutText( post.Body)
             </p>
         </article>
     }
