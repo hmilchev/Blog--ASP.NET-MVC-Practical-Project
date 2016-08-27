@@ -12,6 +12,12 @@ namespace Blog__ASP.NET_MVC_Practical_Project.Models
     {
         [StringLength(100)]
         public string FullName { get; set; }
+        [StringLength(100)]
+        public string Division { get; set; }
+        [StringLength(100)]
+        public string Server { get; set; }
+        [StringLength(100)]
+        public string Brotherhood { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

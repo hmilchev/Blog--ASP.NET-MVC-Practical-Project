@@ -155,7 +155,12 @@ namespace Blog__ASP.NET_MVC_Practical_Project.Controllers
                 {
                     UserName = model.Email,
                     Email = model.Email,
-                    FullName = model.FullName
+                    FullName = model.FullName,
+                    Division = model.Division,
+                    Server = model.Server,
+                    Brotherhood = model.Brotherhood
+
+
                 };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

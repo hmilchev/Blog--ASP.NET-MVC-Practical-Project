@@ -9,19 +9,19 @@
 
 <section class="row">
     @foreach (var post in Model)
-    {
-        <article class="post col-md-4">
-            <h2><a href="/Posts/Details/@post.Id"> @Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional.Utils.CutText(post.Title, 50)</a></h2>
+    { 
+        <article class="post col-md-4"> @*BYME screein is 12/12 , md is 4 here , which means there is space for 3 posts *@
+            <h2 class="title"><a href="/Posts/Details/@post.Id"> @Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional.Utils.CutText(post.Title, 50)</a></h2>
             <div>
                 Created on <i>@post.Date</i>
                 @if (@post.Author != null)
-                {
-                @:by  <i>@post.Author.FullName (@post.Author.UserName)</i>
+                {  
+                @:by  <i>@post.Author.FullName (@post.Author.UserName)</i>   @*BYME add href  hyperlink to the creator of the post here*@   
                 }
             </div>
-            <p>
-                @Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional.Utils.CutText(post.Body)
-            </p>
+            <div class="body">
+                @Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional.Utils.CutText(post.Body,200) @*BYME edit post lenght here*@
+            </div>
 
             @* this is added by myself : *@
             <p><a href="/Posts/Details/@post.Id">Learn more</a></p>

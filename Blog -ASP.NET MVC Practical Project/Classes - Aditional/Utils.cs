@@ -16,5 +16,10 @@ namespace Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional
             var shortText = text.Substring(0, maxLenght) + "...";
             return shortText;
         }
+        public static List<string> Divisions()
+        {
+            List<string> divs = new List<string> { "Unranked", "Bronze", "Silver", "Gold", "Platinum", "Diamond", "Challenger" };
+            return divs;
+        }
     }
 }

@@ -81,8 +81,16 @@ namespace Blog__ASP.NET_MVC_Practical_Project.Models
         public string ConfirmPassword { get; set; }
 
        
-        [Display(Name = "Full Name")]
+        [Display(Name = "Summoner Name")]
         public string FullName { get; set; }
+
+        [Display(Name = "League Division")]
+        public string Division { get; set; }
+
+        [Display(Name = "Server")]
+        public string Server { get; set; }
+        [Display(Name = "Brotherhood")]
+        public string Brotherhood { get; set; }
     }
 
         public class ResetPasswordViewModel
