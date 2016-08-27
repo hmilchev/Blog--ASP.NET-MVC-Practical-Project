@@ -11,7 +11,7 @@
     @foreach (var post in Model)
     {
         <article class="post col-md-4">
-            <h2>@Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional.Utils.CutText(post.Title, 50)</h2>
+            <h2><a href="/Posts/Details/@post.Id"> @Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional.Utils.CutText(post.Title, 50)</a></h2>
             <div>
                 Created on <i>@post.Date</i>
                 @if (@post.Author != null)
@@ -22,6 +22,9 @@
             <p>
                 @Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional.Utils.CutText(post.Body)
             </p>
+
+            @* this is added by myself : *@
+            <p><a href="/Posts/Details/@post.Id">Learn more</a></p>
         </article>
     }
 </section>

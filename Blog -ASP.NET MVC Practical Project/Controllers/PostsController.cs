@@ -37,6 +37,7 @@ namespace Blog__ASP.NET_MVC_Practical_Project.Controllers
         }
 
         // GET: Posts/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -47,28 +48,33 @@ namespace Blog__ASP.NET_MVC_Practical_Project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateInput(false)]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Title,Body")] Post post)
         {
             if (ModelState.IsValid)
             {
+                post.Author = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
+                // mynote - thats how you create new post , than save changes
                 db.Posts.Add(post);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index"); 
             }
 
             return View(post);
         }
 
         // GET: Posts/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Post post = db.Posts.Find(id);
-            if (post == null)
+            Post post = db.Posts.Include(p => p.Author).SingleOrDefault(p => p.Id == id);
+
+            if (post == null|| post.Author == null || (post.Author.UserName != User.Identity.Name && !User.IsInRole("Administrators"))) 
             {
                 return HttpNotFound();
             }
@@ -80,10 +86,11 @@ namespace Blog__ASP.NET_MVC_Practical_Project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateInput(false)]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Title,Body,Date")] Post post)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid )
             {
                 db.Entry(post).State = EntityState.Modified;
                 db.SaveChanges();
@@ -93,6 +100,7 @@ namespace Blog__ASP.NET_MVC_Practical_Project.Controllers
         }
 
         // GET: Posts/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -109,6 +117,7 @@ namespace Blog__ASP.NET_MVC_Practical_Project.Controllers
 
         // POST: Posts/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {

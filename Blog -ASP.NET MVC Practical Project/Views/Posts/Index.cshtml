@@ -51,9 +51,16 @@
             @Html.DisplayFor(modelItem => item.CommentsCount)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @if (User.IsInRole("Administrators") || (item.Author != null && User.Identity.Name ==item.Author.UserName))
+            {
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) @:|
+            }
+            
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) 
+            @if (User.IsInRole("Administrators") || (item.Author != null && User.Identity.Name == item.Author.UserName))
+            {
+                    @:| @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            }
         </td>
     </tr>
 }
