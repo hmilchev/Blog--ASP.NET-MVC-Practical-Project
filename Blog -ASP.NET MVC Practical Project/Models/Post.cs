@@ -8,6 +8,11 @@ namespace Blog__ASP.NET_MVC_Practical_Project.Models
 {
     public class Post
     {
+
+        public Post()
+        {
+            this.Date = DateTime.Now;
+        }
         [Key]
         public int Id { get; set; }
         [Required]

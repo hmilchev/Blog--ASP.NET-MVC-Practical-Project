@@ -46,8 +46,9 @@ namespace Blog__ASP.NET_MVC_Practical_Project.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Body,Date")] Post post)
+        public ActionResult Create([Bind(Include = "Id,Title,Body")] Post post)
         {
             if (ModelState.IsValid)
             {
@@ -78,6 +79,7 @@ namespace Blog__ASP.NET_MVC_Practical_Project.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Title,Body,Date")] Post post)
         {

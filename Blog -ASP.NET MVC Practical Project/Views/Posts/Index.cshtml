@@ -35,7 +35,7 @@
             @Html.DisplayFor(modelItem => item.Title)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Body)
+            @Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional.Utils.CutText(item.Body, 300)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Date)
@@ -43,7 +43,7 @@
         <td>
             @if (item.Author == null)
             {
-                <i> No Author </i>
+                <i> No Author </i> 
             }
             @Html.DisplayFor(modelItem => item.Author.FullName)
         </td>
