@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Guides</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -23,9 +23,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Author.FullName)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.CommentsCount)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -35,7 +35,7 @@
             @Html.DisplayFor(modelItem => item.Title)
         </td>
         <td>
-            @Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional.Utils.CutText(item.Body, 300)
+            @Html.Raw(Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional.Utils.CutText(item.Body, 300))
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Date)
@@ -47,9 +47,9 @@
             }
             @Html.DisplayFor(modelItem => item.Author.FullName)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.CommentsCount)
-        </td>
+        </td>*@
         <td>
             @if (User.IsInRole("Administrators") || (item.Author != null && User.Identity.Name ==item.Author.UserName))
             {
