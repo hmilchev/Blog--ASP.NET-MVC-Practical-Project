@@ -13,7 +13,7 @@ namespace Blog__ASP.NET_MVC_Practical_Project.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
-            var latestsPosts = db.Posts.Include(p => p.Author).OrderByDescending(p => p.Date).Take(3);
+            var latestsPosts = db.Posts.Include(p => p.Author).OrderByDescending(p => p.Date).Take(4);
             return View(latestsPosts);
         }
     }

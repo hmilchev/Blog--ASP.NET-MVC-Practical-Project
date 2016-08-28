@@ -79,4 +79,4 @@ c:\users\hristo\documents\visual studio 2015\Projects\Blog -ASP.NET MVC Practica
 c:\users\hristo\documents\visual studio 2015\Projects\Blog -ASP.NET MVC Practical Project\Blog -ASP.NET MVC Practical Project\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 c:\users\hristo\documents\visual studio 2015\Projects\Blog -ASP.NET MVC Practical Project\Blog -ASP.NET MVC Practical Project\obj\Debug\Blog -ASP.NET MVC Practical Project.dll
 c:\users\hristo\documents\visual studio 2015\Projects\Blog -ASP.NET MVC Practical Project\Blog -ASP.NET MVC Practical Project\obj\Debug\Blog -ASP.NET MVC Practical Project.pdb
-C:\Users\Hristo\Documents\Visual Studio 2015\Projects\Blog -ASP.NET MVC Practical Project\Blog -ASP.NET MVC Practical Project\obj\Debug\Blog -ASP.NET MVC Practical Project.csprojResolveAssemblyReference.cache
+C:\Users\Hristo\documents\visual studio 2015\Projects\Blog -ASP.NET MVC Practical Project\Blog -ASP.NET MVC Practical Project\obj\Debug\Blog -ASP.NET MVC Practical Project.csprojResolveAssemblyReference.cache
