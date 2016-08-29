@@ -18,6 +18,7 @@ namespace Blog__ASP.NET_MVC_Practical_Project.Models
         [Required]
         [StringLength(200)]
         public string Title { get; set; }
+         
         [Required]
         [DataType(DataType.MultilineText)]
         public string Body { get; set; }

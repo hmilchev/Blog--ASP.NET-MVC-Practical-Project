@@ -18,6 +18,7 @@ namespace Blog__ASP.NET_MVC_Practical_Project.Models
         public string Server { get; set; }
         [StringLength(100)]
         public string Brotherhood { get; set; }
+        public int? PostsCount { get; set; }  //BYME
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
