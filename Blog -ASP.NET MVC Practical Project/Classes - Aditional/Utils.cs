@@ -21,5 +21,12 @@ namespace Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional
             List<string> divs = new List<string> { "Unranked", "Bronze", "Silver", "Gold", "Platinum", "Diamond", "Challenger" };
             return divs;
         }
+        public static int counter(int count = 0)
+        {
+            int trueCount = count;
+            trueCount++;
+            return trueCount;
+
+        }
     }
 }
