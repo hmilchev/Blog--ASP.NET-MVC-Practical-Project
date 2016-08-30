@@ -2,88 +2,90 @@
 @{
     ViewBag.Title = "Register";
 }
+<div class="newmain">
+    <h2>@ViewBag.Title.</h2>
 
-<h2>@ViewBag.Title.</h2>
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <h4>Create a new account.</h4>
+        <hr />
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+            </div>
         </div>
-    </div>
 
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.FullName, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.FullName, new { @class = "form-control" })
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.FullName, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.FullName, new { @class = "form-control" })
+            </div>
         </div>
-    </div>
-    //neeew
-    <div class="form-group">
-        @Html.LabelFor(m => m.Division, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Division, new { @class = "form-control" })
-            @*@Html.DropDownList(m => m.Division, new { @class = "form-control" })*@
-            @*@Html.DropDownList(Html.DropDownListFor(
-           model => model.Division,
-           new SelectList(
-                  new List<Object>{
-                       new { value = 0 , text = "Unranked"  },
-                       new { value = 1 , text = "Bronze" },
-                       new { value = 2 , text = "Silver"},
-                       new { value = 2 , text = "Gold"},
-                       new { value = 2 , text = "Platinum"},
-                       new { value = 2 , text = "Diamond"},
-                       new { value = 2 , text = "Challenger"}
-                    },
-                  "value",
-                  "text",
-                   Model.Division
-           )
-        ))*@
-            @*BYME TRYED TO CREATE DROPDOWN LIST FOR DIVISIONS HERE*@
-            
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Server, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Server, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Brotherhood, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Brotherhood, new { @class = "form-control" })
-        </div>
-    </div>
-    //neeew
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
-}
+        //neeew
+        <div class="form-group">
+            @Html.LabelFor(m => m.Division, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Division, new { @class = "form-control" })
+                @*@Html.DropDownList(m => m.Division, new { @class = "form-control" })*@
+                @*@Html.DropDownList(Html.DropDownListFor(
+                       model => model.Division,
+                       new SelectList(
+                              new List<Object>{
+                                   new { value = 0 , text = "Unranked"  },
+                                   new { value = 1 , text = "Bronze" },
+                                   new { value = 2 , text = "Silver"},
+                                   new { value = 2 , text = "Gold"},
+                                   new { value = 2 , text = "Platinum"},
+                                   new { value = 2 , text = "Diamond"},
+                                   new { value = 2 , text = "Challenger"}
+                                },
+                              "value",
+                              "text",
+                               Model.Division
+                       )
+                    ))*@
+                @*BYME TRYED TO CREATE DROPDOWN LIST FOR DIVISIONS HERE*@
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Server, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Server, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Brotherhood, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Brotherhood, new { @class = "form-control" })
+            </div>
+        </div>
+        //neeew
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="Register" />
+            </div>
+        </div>
+    }
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+    </div>

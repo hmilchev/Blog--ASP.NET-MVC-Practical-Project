@@ -3,28 +3,31 @@
 }
 
 @model IEnumerable<Blog__ASP.NET_MVC_Practical_Project.Models.Post>
-<div class="jumbotron">
-    <h1>League of Legends Guides Blog</h1>
- </div>
-
-<section class="row">
-    @foreach (var post in Model)
-    { 
-        <article class="post col-md-3"> @*BYME screein is 12/12 , md is 4 here , which means there is space for 3 posts *@
-            <h2 class="title"><a href="/Posts/Details/@post.Id"> @Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional.Utils.CutText(post.Title, 50)</a></h2>
-            <div>
-                Created on <i>@post.Date</i>
-                @if (@post.Author != null)
-                {  
-                @:by  <i>@post.Author.FullName (@post.Author.UserName)</i>   @*BYME add href  hyperlink to the creator of the post here*@   
+@*<div class="jumbotron">
+    <h1><div class="newmain"> League of Legends Guides Blog </div></h1>
+ </div>*@
+<div class="mainhead"><h2>League of Legends Guides</h2></div>
+<div class="newmain">
+    <section class="row">
+        @foreach (var post in Model)
+        {
+            <article class="post col-md-10">
+                @*BYME screein is 12/12 , md is 4 here , which means there is space for 3 posts *@
+                <h3 class="title" style="color:darkkhaki;"> @Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional.Utils.CutText(post.Title, 50)</h3>
+                <div>
+                    Created on <i>@post.Date</i>
+                    @if (@post.Author != null)
+                    {
+                        @:by  <i>@post.Author.FullName (@post.Author.UserName)</i>   @*BYME add href  hyperlink to the creator of the post here*@
                 }
-            </div>
-            <div class="body">
-                @(Html.Raw(Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional.Utils.CutText(post.Body,200))) @*BYME edit post lenght here*@
-            </div>
+                </div>
+                <div class="body">
+                    @(Html.Raw(Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional.Utils.CutText(post.Body, 200))) @*BYME edit post lenght here*@
+                </div>
 
-            @* this is added by myself : *@
-            <p><a href="/Posts/Details/@post.Id">Learn more</a></p>
-        </article>
-    }
-</section>
+                @* this is added by myself : *@
+                <p><a href="/Posts/Details/@post.Id">Learn more</a></p>
+            </article>
+        }
+    </section>
+</div>
