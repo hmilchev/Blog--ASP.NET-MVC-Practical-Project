@@ -23,8 +23,9 @@
             </dt>
 
             <dd>
-                <textarea class="form-control text-box multi-line valid" disabled="disabled">@Model.Body</textarea>
+                @*<textarea class="form-control text-box multi-line valid" disabled="disabled">@Model.Body</textarea>*@
                 @*@Html.DisplayFor(model => model.Body)*@
+                @(Html.Raw(Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional.Utils.CutText(Model.Body, 100000)))
             </dd>
 
             <dt>

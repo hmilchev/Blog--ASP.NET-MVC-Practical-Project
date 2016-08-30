@@ -12,7 +12,7 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FullName)
+                Summoner
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Division)
@@ -67,6 +67,11 @@
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.FullName)
+                    @if (item.UserName != null && User.Identity.Name == item.UserName)
+                    {
+                        @Html.ActionLink("[Your profile]", "Details", new { id = item.Id })
+
+                    }
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Division)

@@ -87,7 +87,14 @@ namespace Blog__ASP.NET_MVC_Practical_Project.Controllers
             {
 
                 db.Entry(applicationUser).State = EntityState.Modified;
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+
+                }
+                catch (Exception)
+                {
+                }
                 return RedirectToAction("Index");
             }
             return View(applicationUser);

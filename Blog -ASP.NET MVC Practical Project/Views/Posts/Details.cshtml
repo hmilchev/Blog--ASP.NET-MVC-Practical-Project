@@ -7,10 +7,9 @@
     <h2>Guide</h2>
 
     <div>
-        <h4>Post</h4>
         <hr />
         <dl class="dl-horizontal">
-            <dt>
+            <dt>Title
             </dt>
 
             <dd>
@@ -19,12 +18,31 @@
 
             <dt>
                 @*@Html.DisplayNameFor(model => model.Body)*@
+                Content
             </dt>
 
             <dd>
-                <textarea class="form-control text-box multi-line valid" disabled="disabled">@Model.Body</textarea>
-                @*@Html.DisplayFor(model => model.Body)*@
+                @*<textarea class="form-control text-box multi-line valid" disabled="disabled">@Model.Body</textarea>*@
+                @(Html.Raw(Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional.Utils.CutText(Model.Body, 100000)))
             </dd>
+            @*<dt>
+                Rate This Guide
+            </dt>
+            <dd>
+                <div class="rating">
+                    <input type="radio" name="test" id="one" checked />
+                    <label for="one"><i class="fa fa-star"></i></label>
+                    <input type="radio" name="test" id="two" />
+                    <label for="two"><i class="fa fa-star"></i></label>
+                    <input type="radio" name="test" id="three" />
+                    <label for="three"><i class="fa fa-star"></i></label>
+                    <input type="radio" name="test" id="four" />
+                    <label for="four"><i class="fa fa-star"></i></label>
+                    <input type="radio" name="test" id="five" />
+                    <label for="five"><i class="fa fa-star"></i></label>
+                </div>
+                <hr />
+            </dd>*@
 
             <dt>
                 @Html.DisplayNameFor(model => model.Date)
@@ -34,8 +52,12 @@
                 @Html.DisplayFor(model => model.Date)
             </dd>
 
+
         </dl>
+
     </div>
+    </div>
+<div>
     <p>
         @if (User.IsInRole("Administrators"))
             {
@@ -44,3 +66,9 @@
         @Html.ActionLink("Back to List", "Index")
     </p>
 </div>
+
+
+
+
+
+
