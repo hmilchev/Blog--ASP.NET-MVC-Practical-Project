@@ -17,7 +17,7 @@ namespace Blog__ASP.NET_MVC_Practical_Project.Controllers
         // GET: Discusses
         public ActionResult Index()
         {
-            var offtopic = db.Discusses.Include(d => d.Author).ToList();
+            var offtopic = db.Offtopics.Include(d => d.Author).ToList();
             return View(offtopic);
         }
 
