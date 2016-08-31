@@ -42,33 +42,31 @@
         <div class="form-group">
             @Html.LabelFor(m => m.Division, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
-                @Html.TextBoxFor(m => m.Division, new { @class = "form-control" })
-                @*@Html.DropDownList(m => m.Division, new { @class = "form-control" })*@
-                @*@Html.DropDownList(Html.DropDownListFor(
-                       model => model.Division,
-                       new SelectList(
-                              new List<Object>{
-                                   new { value = 0 , text = "Unranked"  },
-                                   new { value = 1 , text = "Bronze" },
-                                   new { value = 2 , text = "Silver"},
-                                   new { value = 2 , text = "Gold"},
-                                   new { value = 2 , text = "Platinum"},
-                                   new { value = 2 , text = "Diamond"},
-                                   new { value = 2 , text = "Challenger"}
-                                },
-                              "value",
-                              "text",
-                               Model.Division
-                       )
-                    ))*@
-                @*BYME TRYED TO CREATE DROPDOWN LIST FOR DIVISIONS HERE*@
+                @*@Html.TextBoxFor(m => m.Division, new { @class = "form-control" })*@
+                <input type="radio" name="Division" value="Unranked" checked /><i>Unranked</i><br>
+                <input type="radio" name="Division" value="Bronze" /><i>Bronze</i><br>
+                <input type="radio" name="Division" value="Silver" /><i>Silver</i><br>
+                <input type="radio" name="Division" value="Gold" /><i>Gold</i><br>
+                <input type="radio" name="Division" value="Platinum" /><i>Platinum</i><br>
+                <input type="radio" name="Division" value="Diamond" /><i>Diamond</i><br>
+                <input type="radio" name="Division" value="Challenger" /><i>Challenger</i><br>
+
 
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(m => m.Server, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
-                @Html.TextBoxFor(m => m.Server, new { @class = "form-control" })
+                @*@Html.TextBoxFor(m => m.Server, new { @class = "form-control" })*@
+
+                <input type="radio" name="Server" value="EUW" checked /><i>Europe - West </i>(EUW)<br>
+                <input type="radio" name="Server" value="EUNE"  /><i>Europe - Nordic & East </i>(EUNE)<br>
+                <input type="radio" name="Server" value="NA" /><i>North America </i>(NA)<br>
+                <input type="radio" name="Server" value="JP" /><i>Japan</i>(JP)<br>
+                <input type="radio" name="Server" value="KR" /><i>Korea</i>(KR)<br>
+                <input type="radio" name="Server" value="BR" /><i>Brazil</i>(BR)<br>
+                <input type="radio" name="Server" value="RU" /><i>Russia</i>(RU)<br>
+
             </div>
         </div>
         <div class="form-group">

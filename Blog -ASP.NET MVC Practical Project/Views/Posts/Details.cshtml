@@ -9,7 +9,8 @@
     <div>
         <hr />
         <dl class="dl-horizontal">
-            <dt>Title
+            <dt>
+                Title
             </dt>
 
             <dd>
@@ -26,23 +27,27 @@
                 @(Html.Raw(Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional.Utils.CutText(Model.Body, 100000)))
             </dd>
             @*<dt>
-                Rate This Guide
-            </dt>
-            <dd>
-                <div class="rating">
-                    <input type="radio" name="test" id="one" checked />
-                    <label for="one"><i class="fa fa-star"></i></label>
-                    <input type="radio" name="test" id="two" />
-                    <label for="two"><i class="fa fa-star"></i></label>
-                    <input type="radio" name="test" id="three" />
-                    <label for="three"><i class="fa fa-star"></i></label>
-                    <input type="radio" name="test" id="four" />
-                    <label for="four"><i class="fa fa-star"></i></label>
-                    <input type="radio" name="test" id="five" />
-                    <label for="five"><i class="fa fa-star"></i></label>
+                                Rate This Guide
+                            </dt>
+                            <dd>
+                                <div id="reviewStars-input">
+                    <input id="star-4" type="radio" name="reviewStars"/>
+                    <label title="gorgeous" for="star-4"></label>
+
+                    <input id="star-3" type="radio" name="reviewStars"/>
+                    <label title="good" for="star-3"></label>
+
+                    <input id="star-2" type="radio" name="reviewStars"/>
+                    <label title="regular" for="star-2"></label>
+
+                    <input id="star-1" type="radio" name="reviewStars"/>
+                    <label title="poor" for="star-1"></label>
+
+                    <input id="star-0" type="radio" name="reviewStars"/>
+                    <label title="bad" for="star-0"></label>
                 </div>
-                <hr />
-            </dd>*@
+                                <hr />
+                            </dd>*@
 
             <dt>
                 @Html.DisplayNameFor(model => model.Date)
@@ -56,7 +61,7 @@
         </dl>
 
     </div>
-    </div>
+</div>
 <div>
     <p>
         @if (User.IsInRole("Administrators"))
