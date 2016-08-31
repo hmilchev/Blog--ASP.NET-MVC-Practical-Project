@@ -16,9 +16,7 @@ namespace Blog__ASP.NET_MVC_Practical_Project.Models
         }
         [Key]
         public int Id { get; set; }
-        [Required]
-        [StringLength(200)]
-        public string Title { get; set; }
+
 
         [Required]
         [DataType(DataType.MultilineText)]
@@ -27,6 +25,6 @@ namespace Blog__ASP.NET_MVC_Practical_Project.Models
         public DateTime Date { get; set; }
         public ApplicationUser Author { get; set; }
 
-        public int? CommentsCount { get; set; }
+       
     }
 }

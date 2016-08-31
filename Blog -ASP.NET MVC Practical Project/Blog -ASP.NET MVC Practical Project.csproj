@@ -197,6 +197,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Classes - Aditional\Utils.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DiscussesController.cs" />
+    <Compile Include="Controllers\ForumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MyPostsController.cs" />
@@ -209,6 +211,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ApplicationDbContex.cs" />
+    <Compile Include="Models\Discuss.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -286,6 +289,12 @@
     <Content Include="Views\MyPosts\Details.cshtml" />
     <Content Include="Views\MyPosts\Edit.cshtml" />
     <Content Include="Views\MyPosts\Delete.cshtml" />
+    <Content Include="Views\Discusses\Create.cshtml" />
+    <Content Include="Views\Discusses\Delete.cshtml" />
+    <Content Include="Views\Discusses\Details.cshtml" />
+    <Content Include="Views\Discusses\Edit.cshtml" />
+    <Content Include="Views\Discusses\Index.cshtml" />
+    <Content Include="Views\Forum\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
