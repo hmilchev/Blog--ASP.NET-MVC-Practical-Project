@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Blog__ASP.NET_MVC_Practical_Project.Models.Question>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="newmain">
+    <h2>Questions</h2>
+
+    @*<p>
+            @Html.ActionLink("Create New", "Create")
+        </p>*@
+    <table class="table">
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author.FullName)
+                    @*@Html.DisplayFor(modelItem => item.Date)*@
+                </td>
+                <td>
+                    @(Html.Raw(Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional.Utils.CutText(item.Body, 100000)))
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>*@
+                <td>
+                    @if (User.IsInRole("Administrators") || (item.Author != null && User.Identity.Name == item.Author.UserName))
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) @:|
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    }
+                </td>
+            </tr>
+        }
+
+
+    </table>
+    <span>
+        @Html.ActionLink("Add New Comment", "Create")
+    </span>
+</div>

@@ -25,6 +25,12 @@ namespace Blog__ASP.NET_MVC_Practical_Project.Models
 
         public System.Data.Entity.DbSet<Blog__ASP.NET_MVC_Practical_Project.Models.Discuss> Discusses { get; set; }
 
+        public System.Data.Entity.DbSet<Blog__ASP.NET_MVC_Practical_Project.Models.Request> Requests { get; set; }
+
+        public System.Data.Entity.DbSet<Blog__ASP.NET_MVC_Practical_Project.Models.Question> Questions { get; set; }
+
+        public System.Data.Entity.DbSet<Blog__ASP.NET_MVC_Practical_Project.Models.Offtopic> Offtopics { get; set; }
+
         //public System.Data.Entity.DbSet<Blog__ASP.NET_MVC_Practical_Project.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 }

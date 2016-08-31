@@ -16,8 +16,9 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Author.FullName)
-                    @*@Html.DisplayFor(modelItem => item.Date)*@
+                  <b> @Html.DisplayFor(modelItem => item.Author.FullName)</b> <br />
+
+                   <i> (@Html.DisplayFor(modelItem => item.Date))</i>
                 </td>
                 <td>
                     @(Html.Raw(Blog__ASP.NET_MVC_Practical_Project.Classes___Aditional.Utils.CutText(item.Body, 100000)))

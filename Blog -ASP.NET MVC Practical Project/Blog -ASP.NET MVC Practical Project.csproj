@@ -202,7 +202,10 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MyPostsController.cs" />
+    <Compile Include="Controllers\OfftopicsController.cs" />
     <Compile Include="Controllers\PostsController.cs" />
+    <Compile Include="Controllers\QuestionsController.cs" />
+    <Compile Include="Controllers\RequestsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -213,7 +216,10 @@
     <Compile Include="Models\ApplicationDbContex.cs" />
     <Compile Include="Models\Discuss.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Offtopic.cs" />
     <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\Request.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -295,6 +301,21 @@
     <Content Include="Views\Discusses\Edit.cshtml" />
     <Content Include="Views\Discusses\Index.cshtml" />
     <Content Include="Views\Forum\Index.cshtml" />
+    <Content Include="Views\Requests\Create.cshtml" />
+    <Content Include="Views\Requests\Delete.cshtml" />
+    <Content Include="Views\Requests\Details.cshtml" />
+    <Content Include="Views\Requests\Edit.cshtml" />
+    <Content Include="Views\Requests\Index.cshtml" />
+    <Content Include="Views\Questions\Create.cshtml" />
+    <Content Include="Views\Questions\Delete.cshtml" />
+    <Content Include="Views\Questions\Details.cshtml" />
+    <Content Include="Views\Questions\Edit.cshtml" />
+    <Content Include="Views\Questions\Index.cshtml" />
+    <Content Include="Views\Offtopics\Create.cshtml" />
+    <Content Include="Views\Offtopics\Delete.cshtml" />
+    <Content Include="Views\Offtopics\Details.cshtml" />
+    <Content Include="Views\Offtopics\Edit.cshtml" />
+    <Content Include="Views\Offtopics\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
